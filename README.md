@@ -1,9 +1,8 @@
+![HTML](https://img.shields.io/badge/-HTML-orange) ![CSS](https://img.shields.io/badge/-CSS-blue) ![JavaScript](https://img.shields.io/badge/-JavaScript-yellow) ![React](https://img.shields.io/badge/-react-green) [Typescript](https://img.shields.io/badge/-typescript-blue) [Redux Toolkit](https://img.shields.io/badge/-redux-green)
 
-![Microverse](https://img.shields.io/badge/Microverse-blueviolet) ![HTML](https://img.shields.io/badge/-HTML-orange) ![CSS](https://img.shields.io/badge/-CSS-blue) ![JavaScript](https://img.shields.io/badge/-JavaScript-yellow) ![React](https://img.shields.io/badge/-react-green)
+# Course Management System:
 
-# Math-Magicians:
-
-- This Web Application is single page application developed with React that makes simple calculations and read random math related quotes
+- This Web Application is single page application developed with React that manages courses and generate charts for pass and failed students in each course 
 
 ## Getting Started
 
