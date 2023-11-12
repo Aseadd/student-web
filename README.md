@@ -19,14 +19,14 @@ To get a local copy up and running follow these simple steps.
 - Type the following command then press ENTER:
 
 ```sh
-  git clone https://github.com/Aseadd_/StudentCourse.git
+  git clone https://github.com/Aseadd_/student-web.git
 ```
 
 - The terminal will send to you information about your download.
 - Type the following command then press ENTER:
 
 ```sh
-  cd StudentCourse
+  cd student-web
 ```
 - **Type the following lists of commands and press ENTER after each command:**
   - _Install dependencies
