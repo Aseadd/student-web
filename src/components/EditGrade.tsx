@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Table, TableBody, TableCell, TableHead, TableRow } from "@mui/material";
+import { Skeleton, Table, TableBody, TableCell, TableHead, TableRow } from "@mui/material";
 import CssBaseline from '@mui/material/CssBaseline';
 import  TextField  from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -71,16 +71,14 @@ console.log("Passes and Fails", courseGrades);
         fails: courseGrades[courseId].fails,
         title: courses.find((course) => course.id === Number(courseId))?.title,
       }));
-
-
-      
-
       const arr = Object.entries(courseGrades);
       console.log("Array", arr);
 
 
       return (
           <Container fixed className="flex mt-10">
+            {
+              data.length > 0 &&
               <BarChart
                 xAxis={[{ scaleType: "band", data: data.map((course) => course.title) }]}
                 series={[
@@ -98,6 +96,14 @@ console.log("Passes and Fails", courseGrades);
                 width={800}
                 height={400}
               />
+            }
+            {
+              data.length === 0 &&
+              <div>
+                <span className="text-2xl">Loading...</span>
+                <Skeleton width={100} height={20} />
+              </div>
+            }
   </Container>
       )
 }

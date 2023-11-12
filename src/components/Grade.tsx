@@ -7,11 +7,9 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { useParams } from "react-router";
 import { RootState } from "../store/store";
-
 import { getGrades,  setSearchParams, addGrade, setGrade, Grade, fetchGrade, fetchGrades, deleteGrade, createGrade } from "../features/gradeSlice";
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
-
-
+import { Skeleton } from "@mui/material";
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 70 },
   { field: 'letterGrade', headerName: 'Grade', width: 70 },
@@ -28,9 +26,6 @@ const columns: GridColDef[] = [
         const [letterGrade, setLetterGrade] = useState('')
         const [studentId, setStudentId] = useState(0)
         const [courseId, setCourseId] = useState(0)
-
-        
-        console.log("Grades list from grade Slice is ",grades);
 
         useEffect(() => {
          
@@ -62,8 +57,34 @@ const columns: GridColDef[] = [
 
             }
           }
-          dispatch(createGrade(grade) as any)
+          if (handleValidation()) {
+            dispatch(addGrade(grade) as any)
+          }
         } 
+
+        const handleValidation = () => {
+          let formIsValid = true;
+          let errors = {
+            letterGrade: "",
+            studentId: "",
+            courseId: ""
+          }
+          if (!letterGrade) {
+            formIsValid = false;
+            errors["letterGrade"] = "Cannot be empty";
+          }
+
+          if (!studentId) {
+            formIsValid = false;
+            errors["studentId"] = "Cannot be empty";
+          }
+
+          if (!courseId) {
+            formIsValid = false;
+            errors["courseId"] = "Cannot be empty";
+          }
+          return formIsValid;
+        }
 
         return (
             <Container fixed className="flex mt-20 space-x-4">
@@ -79,6 +100,7 @@ const columns: GridColDef[] = [
                 setLetterGrade(e.target.value)
               }}
             />
+
             <TextField
               className="block w-1/2 px-4 py-2 mt-2 text-gray-900 bg-white border rounded-md focus:border-red-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
               id="outlined-required"
@@ -109,8 +131,9 @@ const columns: GridColDef[] = [
             </Button>
             </div>
           </form>
-
+         
              {
+          gradeSlice.grades && gradeSlice.grades.length > 0 &&
             <DataGrid
             rows={gradeSlice.grades}
             columns={columns}
@@ -120,8 +143,15 @@ const columns: GridColDef[] = [
               },
             }}
             pageSizeOptions={[5, 10]}
-          />
-            
+          />  
+            }
+
+            {
+              gradeSlice.grades && gradeSlice.grades.length === 0 &&
+              <div className="flex justify-center items-center">
+                <h1 className="text-4xl font-bold text-gray-400">Loading ...</h1>
+                <Skeleton width={100} height={20} />
+              </div>    
             }
 
           </Container>

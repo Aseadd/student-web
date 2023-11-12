@@ -10,7 +10,7 @@ import { RootState } from "../store/store";
 
 import { getStudents,  setSearchParams, addStudent, setStudent, Student, fetchStudent, fetchStudents, deleteStudent, createStudent } from "../features/studentSlice";
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
-import { Paper, Table, TableHead, TableRow, TableCell, TableBody, TablePagination } from "@mui/material";
+import { Paper, Table, TableHead, TableRow, TableCell, TableBody, TablePagination, Skeleton } from "@mui/material";
 import React from "react";
 import ChartTable from "./EditGrade";
 import { BarChart } from "@mui/x-charts";
@@ -36,16 +36,6 @@ const columns: GridColDef[] = [
         const {student, students, searchParams} = studentSlice;
         const {course, courses} = courseSlice;
       //  const {grade, grades} = gradeSlice;
-        
-        const [name, setName] = useState('')
-        const [contactDetails, setContactDetails] = useState('')
-        const [academicRecord, setAcademicRecord] = useState('')
-        const [formData, setFormData] = useState<Student>(new Student())
-        const [countA, setCountA] = useState(0)
-        const [countB, setCountB] = useState(0)
-        const [countC, setCountC] = useState(0)
-        const [countD, setCountD] = useState(0)
-
         const [page, setPage] = useState(0);
         const [rowsPerPage, setRowsPerPage] = useState(5);
       
@@ -91,9 +81,10 @@ console.log("Course Grade Counts", courseGradeCounts);
         const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
           e.preventDefault()
         } 
-
-        return (
-            <Container fixed className="flex mt-20">
+    return (
+      <Container fixed className="flex mt-20">
+         {
+      students.length > 0 &&
       <Paper>
       <Table>
         <TableHead>
@@ -139,20 +130,14 @@ console.log("Course Grade Counts", courseGradeCounts);
         />
       </Table>
     </Paper>
-      
-      {/* Chart Section */}
-      <BarChart
-          xAxis={[{ scaleType: 'band', data: [students.map(student => {
-            return student.courses.map(course => {
-              return course.title;
-            });
-          })] }]}
-          series={ typeof courseGradeCounts === 'object' ? Object.keys(courseGradeCounts).map((courseID) => {
-            return { data: [courseGradeCounts[courseID]], type: 'bar' };
-          }) : []}
-          width={1000}
-          height={300}
-        />
+   }
+   {
+      students.length === 0 &&
+      <div className="flex justify-center items-center">
+        <h1 className="text-4xl font-bold text-gray-400">Loading ...</h1>
+        <Skeleton width={100} height={20} />
+      </div>
+   }
   </Container>
         );
      };
