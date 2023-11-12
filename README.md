@@ -1,46 +1,88 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Microverse](https://img.shields.io/badge/Microverse-blueviolet) ![HTML](https://img.shields.io/badge/-HTML-orange) ![CSS](https://img.shields.io/badge/-CSS-blue) ![JavaScript](https://img.shields.io/badge/-JavaScript-yellow) ![React](https://img.shields.io/badge/-react-green)
 
-## Available Scripts
+# Math-Magicians:
 
-In the project directory, you can run:
+- This Web Application is single page application developed with React that makes simple calculations and read random math related quotes
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To get a local copy up and running follow these simple steps.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+- VIsual Studio Code.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Setup
 
-### `npm run build`
+- Open the terminal on your computer
+- Navigate through directories using [change directory (cd)](https://www.howtogeek.com/659411/how-to-change-directories-in-command-prompt-on-windows-10) command to where you want to clone the repository.
+- Type the following command then press ENTER:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+  git clone https://github.com/Aseadd_/StudentCourse.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- The terminal will send to you information about your download.
+- Type the following command then press ENTER:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+  cd StudentCourse
+```
+- **Type the following lists of commands and press ENTER after each command:**
+  - _Install dependencies
+```sh
+ npm install
+```
+- **Type the following lists of commands and press ENTER after each command:**
+  - _Start server_
 
-### `npm run eject`
+```sh
+  npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Open folder in VSC**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```sh
+  code .
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Launches the test runner
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```sh
+  npm test
+```
 
-## Learn More
+### To build the app for production
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```sh
+  npm run build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Built With
+
+- **React:** JavaScript library.
+- **TypeScript:** Javascript with syntax for types
+- **Redux Toolkit:** State management library.
+- **Tailwind CSS:** Styling components
+- **Material UI:** FOr designing Components.
+
+## 🌎 Live Demo:
+
+- [Unavailable for now]
+
+## Authors
+
+### 👤 Addis Tsega
+
+- GitHub: [@Aseadd](https://github.com/Aseadd)
+- Twitter: [@AdaTsega](https://twitter.com/AdaTsega)
+- LinkedIn: [Addis Tsega](https://www.linkedin.com/in/addis-tsega-422789195/)
+
+## Show your support
+
+- Give a ⭐️ if you like this project!
+
+## 📝 License
+
+- This project is [MIT](./LICENSE) licensed.
