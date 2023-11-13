@@ -48,8 +48,6 @@ const columns: GridColDef[] = [
           setPage(0);
         };
         const emptyRows = rowsPerPage - Math.min(rowsPerPage, students.length - page * rowsPerPage);
-        
-        console.log("Students list from student Component ",students);
         const courseGradeCounts: any = {};
 
         for (const student of students) {
@@ -64,14 +62,6 @@ const columns: GridColDef[] = [
             }
           }
         }
-console.log("Course Grade Counts", courseGradeCounts);
-        // useEffect(() => {
-        //   dispatch(fetchStudents(searchParams));
-        // }, [students]);
-
-        // useEffect(() => {
-        //   setFormData(student);
-        // }, [students]);
 
         useEffect(() => {
           dispatch(fetchStudents(searchParams));

@@ -99,6 +99,7 @@ const columns: GridColDef[] = [
               onChange= {(e) => {
                 setLetterGrade(e.target.value)
               }}
+              required ={true}
             />
 
             <TextField
@@ -110,6 +111,7 @@ const columns: GridColDef[] = [
               onChange= {(e) => {
                 setStudentId(parseInt(e.target.value))
               }}
+              required ={true}
             />
             <TextField
               className="block w-1/2 px-4 py-2 mt-2 text-gray-900 bg-white border rounded-md focus:border-red-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
@@ -120,6 +122,7 @@ const columns: GridColDef[] = [
               onChange= {(e) => {
                setCourseId(parseInt(e.target.value))
               }}
+              required ={true}
             />
             <Button
             className="block w-1/3 px-4 py-2 mt-2 text-gray-900 bg-white border rounded-md focus:border-red-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
